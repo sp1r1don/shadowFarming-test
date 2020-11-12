@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
+    "bignumber.js": "^9.0.1",
     "core-js": "^3.6.5",
     "normalize.css": "^8.0.1",
     "pug": "^3.0.0",

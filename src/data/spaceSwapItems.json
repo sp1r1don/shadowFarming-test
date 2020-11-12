@@ -1,0 +1,14 @@
+[
+  {
+    "name": "SHAKE-ETH UNI-V2 LP",
+    "uniPoolAddress": "0x8f30ba1f75ec27a014591789d117a1bb4703bff8"
+  },
+  {
+    "name": "MILK2-SHAKE UNI-V2 LP",
+    "uniPoolAddress": "0x9f319e265b8189b5b5c2152cacc791b95b3da180"
+  },
+  {
+    "name": "MILK2-ETH UNI-V2 LP",
+    "uniPoolAddress": "0xee802b312a957e00dd7bbc08eec8bb93d40e981d"
+  }
+]

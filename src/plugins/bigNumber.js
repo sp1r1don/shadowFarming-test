@@ -6,10 +6,8 @@ BigNumber.config({
   DECIMAL_PLACES: 18,
 });
 
-export const BNVueInst = {
+export default {
   install(Vue) {
     Vue.prototype.$BN = (num) => new BigNumber(num);
   },
 };
-
-export const BN = (num) => new BigNumber(num);
