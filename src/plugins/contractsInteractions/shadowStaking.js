@@ -25,37 +25,44 @@ export default {
           gasPrice,
         });
       } catch (e) {
-        console.log('registerUser error');
-        console.log(e);
+        console.error('registerUser error');
+        console.error(e);
         return false;
       }
     };
     const withdraw = async (from, withdrawOptions) => {
+      const {
+        keyId,
+        amount,
+        lastBlockNumber,
+        currentBlockNumber,
+        sign,
+      } = withdrawOptions;
       try {
         const gasPrice = await web3.eth.getGasPrice();
         const gas = await contract.methods.withdraw(
-          withdrawOptions.keyId,
-          withdrawOptions.amount,
-          withdrawOptions.lastBlockNumber,
-          withdrawOptions.currentBlockNumber,
-          withdrawOptions.sign,
+          keyId,
+          amount,
+          lastBlockNumber,
+          currentBlockNumber,
+          sign,
         ).estimateGas({
           from,
         });
         return await contract.methods.withdraw(
-          withdrawOptions.keyId,
-          withdrawOptions.amount,
-          withdrawOptions.lastBlockNumber,
-          withdrawOptions.currentBlockNumber,
-          withdrawOptions.sign,
+          keyId,
+          amount,
+          lastBlockNumber,
+          currentBlockNumber,
+          sign,
         ).send({
           from,
           gas,
           gasPrice,
         });
       } catch (e) {
-        console.log('withdraw error');
-        console.log(e);
+        console.error('withdraw error');
+        console.error(e);
         return false;
       }
     };

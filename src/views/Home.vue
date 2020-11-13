@@ -60,7 +60,7 @@ export default {
           this.init();
         }
       } else {
-        console.log(error);
+        console.error(error);
       }
     },
     async init() {
@@ -98,7 +98,6 @@ export default {
       });
       const resp = await this.$shadowStaking.getLastBlock(this.userAddress);
       if (resp > 0) this.userRegistered = true;
-      console.log(resp);
     },
     async getMilkPriceInETH() {
       const reserves = await this.$uniswap.getReserves(this.uniMilkPool);
@@ -111,7 +110,6 @@ export default {
     async withdraw() {
       const insertAddress = await this.$api.application.insertAddress(this.userAddress);
       this.withdrawOptions = insertAddress.data;
-      console.log(this.withdrawOptions);
       await this.$shadowStaking.withdraw(this.userAddress, this.withdrawOptions);
     },
   },
